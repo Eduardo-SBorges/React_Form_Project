@@ -10,6 +10,7 @@ import SelectYear from './SelectInputs/SelectYear/SelectYear';
 import CheckBox from './CheckBox/CheckBox';
 import TabsMenu from './TabsMenu/TabsMenu';
 import CertificatesInput from './CertificatesInput/CertificatesInput';
+import BodyStructure from './BodyStructure/BodyStructure';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       {/* <CommonInput label="Nome" type="text" id="nome" placeholder="Juanito" /> */}
       {/* <TabsMenu tab1="Basic" tab2="Social" tab3="Certificates" /> */}
       {/* <CertificatesInput /> */}
+      {/* <BodyStructure tabName="First Tab" /> */}
     </>
   );
 };
