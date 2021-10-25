@@ -1,0 +1,21 @@
+.tabs-container {
+  display: flex;
+}
+
+.tabs {
+  display: flex;
+  height: 44px;
+  width: calc(100% / 3);
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px -2px 0px #aaaaaa;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.tabs-container .active {
+  box-shadow: inset 0px -3px 0px #074ee8;
+  color: #074ee8;
+}
