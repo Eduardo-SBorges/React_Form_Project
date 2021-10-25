@@ -15,7 +15,12 @@ const FirstTab = () => {
       <section id="first-tab">
         <Title text="Team Sign Up" />
 
-        <TabsMenu tab1="Basic" tab2="Social" tab3="Certificates" />
+        <TabsMenu
+          tab1="Basic"
+          active1="active"
+          tab2="Social"
+          tab3="Certificates"
+        />
 
         <div id="content_1tab">
           <div class="input-block">

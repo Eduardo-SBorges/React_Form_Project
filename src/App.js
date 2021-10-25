@@ -12,6 +12,7 @@ import TabsMenu from './Components/TabsMenu/TabsMenu';
 import CertificatesInput from './Components/CertificatesInput/CertificatesInput';
 import BodyStructure from './ViewTabs/BodyStructure/BodyStructure';
 import FirstTab from './ViewTabs/FirstTab/FirstTab';
+import SecondTab from './ViewTabs/SecontTab/SecondTab';
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
       {/* <CommonInput label="Nome" type="text" id="nome" placeholder="Juanito" /> */}
       {/* <TabsMenu tab1="Basic" tab2="Social" tab3="Certificates" /> */}
       {/* <CertificatesInput /> */}
-      <BodyStructure tabName="First Tab" tabRender={<FirstTab />} />
+      <BodyStructure tabName="First Tab" tabRender={<SecondTab />} />
     </>
   );
 };
