@@ -9,6 +9,7 @@ import SelectMonth from './SelectInputs/SelectMonth/SelectMonth';
 import SelectYear from './SelectInputs/SelectYear/SelectYear';
 import CheckBox from './CheckBox/CheckBox';
 import TabsMenu from './TabsMenu/TabsMenu';
+import CertificatesInput from './CertificatesInput/CertificatesInput';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       {/* <SelectYear /> */}
       {/* <CommonInput label="Nome" type="text" id="nome" placeholder="Juanito" /> */}
       {/* <TabsMenu tab1="Basic" tab2="Social" tab3="Certificates" /> */}
+      {/* <CertificatesInput /> */}
     </>
   );
 };
