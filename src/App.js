@@ -13,22 +13,12 @@ import CertificatesInput from './Components/CertificatesInput/CertificatesInput'
 import BodyStructure from './ViewTabs/BodyStructure/BodyStructure';
 import FirstTab from './ViewTabs/FirstTab/FirstTab';
 import SecondTab from './ViewTabs/SecontTab/SecondTab';
+import ThirdTab from './ViewTabs/ThirdTab/ThirdTab';
 
 const App = () => {
   return (
     <>
-      {/* <Title text="Team Sign Up" /> */}
-      {/* <ButtonNext /> */}
-      {/* <ButtonMore /> */}
-      {/* <ButtonFinish /> */}
-      {/* <CheckBox label="I accept the terms and privacy" /> */}
-      {/* <SelectDay /> */}
-      {/* <SelectMonth /> */}
-      {/* <SelectYear /> */}
-      {/* <CommonInput label="Nome" type="text" id="nome" placeholder="Juanito" /> */}
-      {/* <TabsMenu tab1="Basic" tab2="Social" tab3="Certificates" /> */}
-      {/* <CertificatesInput /> */}
-      <BodyStructure tabName="First Tab" tabRender={<SecondTab />} />
+      <BodyStructure tabName="First" tabRender={<FirstTab />} />
     </>
   );
 };

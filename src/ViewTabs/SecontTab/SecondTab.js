@@ -35,6 +35,7 @@ const SecondTab = () => {
               placeholder="https://github.com/example"
               required
             />
+            <span id="erroGithub"></span>
           </div>
 
           <div class="btn-to-right btn-to-down">

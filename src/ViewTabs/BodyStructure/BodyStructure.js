@@ -1,5 +1,4 @@
 import React from 'react';
-import FirstTab from '../FirstTab/FirstTab';
 import './BodyStructure.css';
 
 const BodyStructure = ({ tabName, tabRender }) => {

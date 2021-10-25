@@ -95,6 +95,7 @@ const FirstTab = () => {
 
           <div id="terms" class="input-block">
             <CheckBox label="I accept the terms and privacy" />
+            <span id="erroCheckbox"></span>
           </div>
 
           <div class="input-block btn-to-right">

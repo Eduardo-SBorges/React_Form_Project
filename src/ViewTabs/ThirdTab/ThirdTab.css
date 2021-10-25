@@ -1,0 +1,16 @@
+.div-heart {
+  margin-top: 7px !important;
+}
+
+.btn-more {
+  margin-top: -10px !important;
+}
+
+.prevent-align-flex-start {
+  align-self: flex-start !important;
+}
+
+.btn-finish {
+  margin-top: 21px;
+  margin-bottom: 13px;
+}
