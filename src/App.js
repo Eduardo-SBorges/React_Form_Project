@@ -1,16 +1,17 @@
 import React from 'react';
-import Title from './Title/Title';
-import ButtonNext from './Buttons/ButtonNext/ButtonNext';
-import ButtonMore from './Buttons/ButtonMore/ButtonMore';
-import ButtonFinish from './Buttons/ButtonFinish/ButtonFinish';
-import CommonInput from './CommonInput/CommonInput';
-import SelectDay from './SelectInputs/SelectDay/SelectDay';
-import SelectMonth from './SelectInputs/SelectMonth/SelectMonth';
-import SelectYear from './SelectInputs/SelectYear/SelectYear';
-import CheckBox from './CheckBox/CheckBox';
-import TabsMenu from './TabsMenu/TabsMenu';
-import CertificatesInput from './CertificatesInput/CertificatesInput';
-import BodyStructure from './BodyStructure/BodyStructure';
+import Title from './Components/Title/Title';
+import ButtonNext from './Components/Buttons/ButtonNext/ButtonNext';
+import ButtonMore from './Components/Buttons/ButtonMore/ButtonMore';
+import ButtonFinish from './Components/Buttons/ButtonFinish/ButtonFinish';
+import CommonInput from './Components/CommonInput/CommonInput';
+import SelectDay from './Components/SelectInputs/SelectDay/SelectDay';
+import SelectMonth from './Components/SelectInputs/SelectMonth/SelectMonth';
+import SelectYear from './Components/SelectInputs/SelectYear/SelectYear';
+import CheckBox from './Components/CheckBox/CheckBox';
+import TabsMenu from './Components/TabsMenu/TabsMenu';
+import CertificatesInput from './Components/CertificatesInput/CertificatesInput';
+import BodyStructure from './ViewTabs/BodyStructure/BodyStructure';
+import FirstTab from './ViewTabs/FirstTab/FirstTab';
 
 const App = () => {
   return (
@@ -26,9 +27,10 @@ const App = () => {
       {/* <CommonInput label="Nome" type="text" id="nome" placeholder="Juanito" /> */}
       {/* <TabsMenu tab1="Basic" tab2="Social" tab3="Certificates" /> */}
       {/* <CertificatesInput /> */}
-      {/* <BodyStructure tabName="First Tab" /> */}
+      <BodyStructure tabName="First Tab" tabRender={<FirstTab />} />
     </>
   );
 };
 
 export default App;
+/* Age Calculator */

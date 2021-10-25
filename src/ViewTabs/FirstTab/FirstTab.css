@@ -1,0 +1,38 @@
+/* First TAB */
+
+.check-terms,
+.checkmark {
+  color: #111 !important;
+  vertical-align: middle;
+}
+
+.medium-input {
+  width: 60%;
+}
+
+.small-input {
+  width: 35%;
+}
+
+.flex-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show {
+  display: block !important;
+  position: absolute;
+}
+
+.four-inputs-by-line {
+  width: 20%;
+}
+
+.line-title {
+  font-family: 'Nunito', sans-serif;
+  color: #767676;
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: normal;
+  margin: 20px 0 0 0;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
+import FirstTab from '../FirstTab/FirstTab';
 import './BodyStructure.css';
 
-const BodyStructure = ({ tabName }) => {
+const BodyStructure = ({ tabName, tabRender }) => {
   return (
     <>
       <header>
@@ -13,7 +14,7 @@ const BodyStructure = ({ tabName }) => {
       <main>
         <div class="form-container">
           <form method="post">
-            <div class="tab-container">Olá Mundo!</div>
+            <div class="tab-container">{tabRender}</div>
           </form>
         </div>
       </main>

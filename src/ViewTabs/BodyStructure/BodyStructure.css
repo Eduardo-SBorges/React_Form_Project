@@ -68,3 +68,38 @@ main {
 .tab-container {
   margin: 1% 5%;
 }
+
+/* ALL TABS */
+
+.title,
+.input-block,
+.tabs-container {
+  margin: 20px 0;
+}
+
+#third-tab,
+#second-tab,
+#first-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.btn-to-right {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-space-between {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: baseline; */
+}
+
+.hide {
+  display: none !important;
+}
+
+button {
+  cursor: pointer;
+}
