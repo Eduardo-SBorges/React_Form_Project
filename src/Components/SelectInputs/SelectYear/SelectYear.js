@@ -1,7 +1,7 @@
 import React from 'react';
 import '../SelectInputs.css';
 
-const SelectYear = () => {
+const SelectYear = ({ birthday, setBirthday }) => {
   const anos = Array.from(
     { length: 110 },
     (a, b) => b + new Date().getFullYear() - 110,
@@ -11,9 +11,15 @@ const SelectYear = () => {
       <label className="labels" htmlFor="year">
         Year
       </label>
-      <select className="select" id="year" name="year" required>
+      <select
+        className="select"
+        id="year"
+        name="year"
+        required
+        onChange={(e) => setBirthday({ ...birthday, year: e.target.value })}
+      >
         <option value=""></option>
-        {anos.map((ano) => {
+        {anos.reverse().map((ano) => {
           return (
             <option key={ano} value={ano}>
               {ano}

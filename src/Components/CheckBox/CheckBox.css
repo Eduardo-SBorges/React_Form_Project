@@ -17,8 +17,10 @@
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+  height: 0.5px;
+  width: 0.5px;
+  bottom: 0%;
+  left: 1.5%;
 }
 
 /* Create a custom checkbox */

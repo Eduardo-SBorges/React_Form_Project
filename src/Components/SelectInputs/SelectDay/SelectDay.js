@@ -1,17 +1,26 @@
 import React from 'react';
 import '../SelectInputs.css';
 
-const SelectDay = () => {
-  const dias = Array.from({ length: 31 }, (a, b) => b + 1);
+const SelectDay = ({ birthday, setBirthday }) => {
+  const dias = Array.from({ length: 31 }, (a, b) => ++b);
 
   return (
     <>
       <label className="labels" htmlFor="day">
         Day
       </label>
-      <select className="select" id="day" name="day" required>
+      <select
+        className="select"
+        id="day"
+        name="day"
+        required
+        onChange={(e) => setBirthday({ ...birthday, day: e.target.value })}
+      >
         <option value=""></option>
         {dias.map((dia) => {
+          if (dia < 10) {
+            dia = `0${dia}`;
+          }
           return (
             <option key={dia} value={dia}>
               {dia}

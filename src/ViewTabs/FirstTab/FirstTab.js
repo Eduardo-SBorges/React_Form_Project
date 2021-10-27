@@ -9,6 +9,30 @@ import CheckBox from '../../Components/CheckBox/CheckBox';
 import ButtonNext from '../../Components/Buttons/ButtonNext/ButtonNext';
 
 const FirstTab = ({ tabsMenu }) => {
+  const [birthday, setBirthday] = React.useState({
+    day: 0,
+    month: 0,
+    year: 0,
+  });
+
+  const [age, setAge] = React.useState('');
+  React.useEffect(() => {
+    const birth = new Date(birthday.year, birthday.month - 1, birthday.day);
+
+    if (birthday.year === 0) {
+      setAge('');
+    } else if (birthday.year !== 0) {
+      setAge(
+        Math.floor(
+          Math.ceil(
+            Math.abs(birth.getTime() - new Date().getTime()) /
+              (1000 * 3600 * 24),
+          ) / 365.25,
+        ),
+      );
+    }
+  }, [birthday]);
+
   return (
     <>
       <section id="first-tab">
@@ -66,13 +90,13 @@ const FirstTab = ({ tabsMenu }) => {
 
           <div className="input-block flex-line">
             <div className="grid-collum four-inputs-by-line">
-              <SelectDay />
+              <SelectDay birthday={birthday} setBirthday={setBirthday} />
             </div>
             <div className="grid-collum four-inputs-by-line">
-              <SelectMonth />
+              <SelectMonth birthday={birthday} setBirthday={setBirthday} />
             </div>
             <div className="grid-collum four-inputs-by-line">
-              <SelectYear />
+              <SelectYear birthday={birthday} setBirthday={setBirthday} />
             </div>
 
             <div className="four-inputs-by-line">
@@ -80,7 +104,7 @@ const FirstTab = ({ tabsMenu }) => {
                 type="number"
                 label="Age"
                 id="age"
-                placeholder="0"
+                placeholder={age}
                 disabled
               />
             </div>
