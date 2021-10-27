@@ -1,24 +1,19 @@
 import React from 'react';
 import ButtonNext from '../../Components/Buttons/ButtonNext/ButtonNext';
 import CommonInput from '../../Components/CommonInput/CommonInput';
-import TabsMenu from '../../Components/TabsMenu/TabsMenu';
 import Title from '../../Components/Title/Title';
 import './SecondTab.css';
 
-const SecondTab = () => {
+const SecondTab = ({ tabsMenu }) => {
   return (
     <>
       <section id="second-tab">
         <Title text="Team Sign Up" />
-        <TabsMenu
-          tab1="Basic"
-          tab2="Social"
-          active2="active"
-          tab3="Certificates"
-        />
+
+        {tabsMenu}
 
         <div id="content_2tab">
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="LinkedIn"
@@ -27,7 +22,7 @@ const SecondTab = () => {
             />
           </div>
 
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="Github *"
@@ -38,8 +33,8 @@ const SecondTab = () => {
             <span id="erroGithub"></span>
           </div>
 
-          <div class="btn-to-right btn-to-down">
-            <ButtonNext />
+          <div className="btn-to-right btn-to-down">
+            <ButtonNext id="tab2" />
           </div>
         </div>
       </section>

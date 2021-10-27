@@ -1,9 +1,9 @@
 import React from 'react';
 import { Check } from 'react-feather';
 
-const ButtonFinish = () => {
+const ButtonFinish = ({ id, ...props }) => {
   return (
-    <button class="btn" type="submit">
+    <button className="btn" id={id} {...props}>
       Finish
       <Check />
     </button>

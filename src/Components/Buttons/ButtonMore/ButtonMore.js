@@ -2,9 +2,14 @@ import React from 'react';
 import { Plus } from 'react-feather';
 import { ChevronRight } from 'react-feather';
 
-const ButtonMore = () => {
+const ButtonMore = ({ id, ...props }) => {
   return (
-    <button class="btn button-prevent button-more" id="my-button-more">
+    <button
+      className="btn button-prevent button-more"
+      type="button"
+      id={id}
+      {...props}
+    >
       <Plus />
       More
       <ChevronRight />

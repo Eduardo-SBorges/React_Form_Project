@@ -1,7 +1,6 @@
 import React from 'react';
 import './FirstTab.css';
 import CommonInput from '../../Components/CommonInput/CommonInput';
-import TabsMenu from '../../Components/TabsMenu/TabsMenu';
 import Title from '../../Components/Title/Title';
 import SelectDay from '../../Components/SelectInputs/SelectDay/SelectDay';
 import SelectMonth from '../../Components/SelectInputs/SelectMonth/SelectMonth';
@@ -9,21 +8,15 @@ import SelectYear from '../../Components/SelectInputs/SelectYear/SelectYear';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import ButtonNext from '../../Components/Buttons/ButtonNext/ButtonNext';
 
-const FirstTab = () => {
+const FirstTab = ({ tabsMenu }) => {
   return (
     <>
       <section id="first-tab">
         <Title text="Team Sign Up" />
-
-        <TabsMenu
-          tab1="Basic"
-          active1="active"
-          tab2="Social"
-          tab3="Certificates"
-        />
+        {tabsMenu}
 
         <div id="content_1tab">
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="Full Name *"
@@ -34,7 +27,7 @@ const FirstTab = () => {
             <span id="erroNome"></span>
           </div>
 
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="Nickname"
@@ -43,8 +36,8 @@ const FirstTab = () => {
             />
           </div>
 
-          <div class="input-block flex-line">
-            <div class="medium-input">
+          <div className="input-block flex-line">
+            <div className="medium-input">
               <CommonInput
                 type="email"
                 label="Email"
@@ -55,7 +48,7 @@ const FirstTab = () => {
               <span id="erroEmail"></span>
             </div>
 
-            <div class="small-input">
+            <div className="small-input">
               <CommonInput
                 type="text"
                 label="Phone"
@@ -66,23 +59,23 @@ const FirstTab = () => {
           </div>
 
           <div>
-            <p class="line-title title">
+            <p className="line-title">
               Birthday *<span id="erroBirthday"></span>
             </p>
           </div>
 
-          <div class="input-block flex-line">
-            <div class="grid-collum four-inputs-by-line">
+          <div className="input-block flex-line">
+            <div className="grid-collum four-inputs-by-line">
               <SelectDay />
             </div>
-            <div class="grid-collum four-inputs-by-line">
+            <div className="grid-collum four-inputs-by-line">
               <SelectMonth />
             </div>
-            <div class="grid-collum four-inputs-by-line">
+            <div className="grid-collum four-inputs-by-line">
               <SelectYear />
             </div>
 
-            <div class="four-inputs-by-line">
+            <div className="four-inputs-by-line">
               <CommonInput
                 type="number"
                 label="Age"
@@ -93,13 +86,13 @@ const FirstTab = () => {
             </div>
           </div>
 
-          <div id="terms" class="input-block">
+          <div id="terms" className="input-block">
             <CheckBox label="I accept the terms and privacy" />
             <span id="erroCheckbox"></span>
           </div>
 
-          <div class="input-block btn-to-right">
-            <ButtonNext />
+          <div className="input-block btn-to-right">
+            <ButtonNext id="tab1" />
           </div>
         </div>
       </section>

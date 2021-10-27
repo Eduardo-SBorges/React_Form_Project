@@ -3,45 +3,40 @@ import ButtonFinish from '../../Components/Buttons/ButtonFinish/ButtonFinish';
 import ButtonMore from '../../Components/Buttons/ButtonMore/ButtonMore';
 import CertificatesInput from '../../Components/CertificatesInput/CertificatesInput';
 import CommonInput from '../../Components/CommonInput/CommonInput';
-import TabsMenu from '../../Components/TabsMenu/TabsMenu';
 import Title from '../../Components/Title/Title';
 import './ThirdTab.css';
 
-const ThirdTab = () => {
+const ThirdTab = ({ tabsMenu }) => {
   return (
     <>
       <section id="third-tab">
         <Title text="Team Sign Up" />
-        <TabsMenu
-          tab1="Basic"
-          tab2="Social"
-          tab3="Certificates"
-          active3="active"
-        />
+
+        {tabsMenu}
 
         <div id="content_3tab">
-          <div id="entry-certificates" class="input-block div-heart">
+          <div id="entry-certificates" className="input-block div-heart">
             <CertificatesInput />
           </div>
-          <div class="input-block btn-space-between btn-more">
-            <div class="certificates-list">
-              <ul class="certificates-ul">
-                <li class="certificates-opt hide">
-                  <span class="certificates-span">Certificates</span>
+          <div className="input-block btn-space-between btn-more">
+            <div className="certificates-list">
+              <ul className="certificates-ul">
+                <li className="certificates-opt hide">
+                  <span className="certificates-span">Certificates</span>
                   <i data-feather="chevron-down"></i>
                 </li>
-                <div class="certificates-added hide">
-                  <div class="certificates-favorite"></div>
-                  <div class="certificates-normal"></div>
+                <div className="certificates-added hide">
+                  <div className="certificates-favorite"></div>
+                  <div className="certificates-normal"></div>
                 </div>
               </ul>
             </div>
-            <div class="prevent-align-flex-start">
+            <div className="prevent-align-flex-start">
               <ButtonMore />
             </div>
           </div>
 
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="Team Name *"
@@ -52,7 +47,7 @@ const ThirdTab = () => {
             <span id="erroTeamName"></span>
           </div>
 
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="Institution *"
@@ -63,7 +58,7 @@ const ThirdTab = () => {
             <span id="erroInstitution"></span>
           </div>
 
-          <div class="input-block">
+          <div className="input-block">
             <CommonInput
               type="text"
               label="Graduation *"
@@ -74,8 +69,8 @@ const ThirdTab = () => {
             <span id="erroGraduation"></span>
           </div>
 
-          <div class="input-block btn-to-right">
-            <ButtonFinish />
+          <div className="input-block btn-to-right">
+            <ButtonFinish id="tab3" />
           </div>
         </div>
       </section>

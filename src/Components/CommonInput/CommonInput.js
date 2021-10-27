@@ -4,11 +4,11 @@ import './CommonInput.css';
 const CommonInput = ({ label, type, id, placeholder, ...props }) => {
   return (
     <>
-      <label class="labels" for={id}>
+      <label className="labels" htmlFor={id}>
         {label}
       </label>
       <input
-        class="inputs"
+        className="inputs"
         type={type}
         id={id}
         placeholder={placeholder}

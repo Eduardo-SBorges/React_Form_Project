@@ -2,9 +2,9 @@ import React from 'react';
 import '../Buttons.css';
 import { ChevronRight } from 'react-feather';
 
-const ButtonNext = () => {
+const ButtonNext = ({ id, ...props }) => {
   return (
-    <button class="btn">
+    <button className="btn" id={id} {...props}>
       Next
       <ChevronRight />
     </button>
