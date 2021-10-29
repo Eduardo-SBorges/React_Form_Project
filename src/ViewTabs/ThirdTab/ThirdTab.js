@@ -62,7 +62,7 @@ const ThirdTab = ({ tabsMenu }) => {
               </ul>
             </div>
             <div className="prevent-align-flex-start">
-              <ButtonMore />
+              <ButtonMore onClick={(e) => console.log(e)} />
             </div>
           </div>
 
