@@ -8,21 +8,21 @@ import SelectYear from '../../Components/SelectInputs/SelectYear/SelectYear';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import ButtonNext from '../../Components/Buttons/ButtonNext/ButtonNext';
 
-const FirstTab = ({ tabsMenu }) => {
+const FirstTab = ({ tabsMenu, topnavigation }) => {
+  /* Starting codes for auto age calculation */
   const [birthday, setBirthday] = React.useState({
     day: 0,
     month: 0,
     year: 0,
   });
 
-  const [age, setAge] = React.useState('');
+  const [age, setage] = React.useState('');
   React.useEffect(() => {
     const birth = new Date(birthday.year, birthday.month - 1, birthday.day);
-
     if (birthday.year === 0) {
-      setAge('');
+      setage('');
     } else if (birthday.year !== 0) {
-      setAge(
+      setage(
         Math.floor(
           Math.ceil(
             Math.abs(birth.getTime() - new Date().getTime()) /
@@ -32,7 +32,61 @@ const FirstTab = ({ tabsMenu }) => {
       );
     }
   }, [birthday]);
+  /* Ending codes for auto age calculation */
 
+  /* Variables for Saving Informations */
+  const [name, setname] = React.useState('');
+  const [nickname, setnickname] = React.useState('');
+  const [email, setemail] = React.useState('');
+  const [phone, setphone] = React.useState('');
+  const [day, setday] = React.useState('');
+  const [month, setmonth] = React.useState('');
+  const [year, setyear] = React.useState('');
+  const [checked, setchecked] = React.useState('');
+
+  React.useEffect(() => {
+    if (localStorage.getItem('name') !== null) {
+      setname(localStorage.getItem('name'));
+    }
+    if (localStorage.getItem('nickname') !== null) {
+      setnickname(localStorage.getItem('nickname'));
+    }
+    if (localStorage.getItem('email') !== null) {
+      setemail(localStorage.getItem('email'));
+    }
+    if (localStorage.getItem('phone') !== null) {
+      setphone(localStorage.getItem('phone'));
+    }
+    if (localStorage.getItem('day') !== null) {
+      setday(localStorage.getItem('day'));
+    }
+    if (localStorage.getItem('month') !== null) {
+      setmonth(localStorage.getItem('month'));
+    }
+    if (localStorage.getItem('year') !== null) {
+      setyear(localStorage.getItem('year'));
+    }
+    if (localStorage.getItem('age') !== null) {
+      setage(localStorage.getItem('age'));
+    }
+    if (localStorage.getItem('checked') !== null) {
+      setchecked(localStorage.getItem('checked'));
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem('name', name);
+    localStorage.setItem('nickname', nickname);
+    localStorage.setItem('email', email);
+    localStorage.setItem('phone', phone);
+    localStorage.setItem('day', day);
+    localStorage.setItem('month', month);
+    localStorage.setItem('year', year);
+    localStorage.setItem('age', age);
+    localStorage.setItem('checked', checked);
+  }, [name, nickname, email, phone, day, month, year, age, checked]);
+
+  /* Ending of variables for Saving Informations */
   return (
     <>
       <section id="first-tab">
@@ -45,10 +99,11 @@ const FirstTab = ({ tabsMenu }) => {
               type="text"
               label="Full Name *"
               id="fullname"
+              value={name}
               placeholder="Juanito Jones"
+              setname={setname}
               required
             />
-            <span id="erroNome"></span>
           </div>
 
           <div className="input-block">
@@ -56,7 +111,9 @@ const FirstTab = ({ tabsMenu }) => {
               type="text"
               label="Nickname"
               id="nickname"
+              value={nickname}
               placeholder="Juanito"
+              setnickname={setnickname}
             />
           </div>
 
@@ -64,12 +121,13 @@ const FirstTab = ({ tabsMenu }) => {
             <div className="medium-input">
               <CommonInput
                 type="email"
-                label="Email"
+                label="Email *"
                 id="email"
+                value={email}
                 placeholder="for@example.com"
+                setemail={setemail}
                 required
               />
-              <span id="erroEmail"></span>
             </div>
 
             <div className="small-input">
@@ -77,26 +135,44 @@ const FirstTab = ({ tabsMenu }) => {
                 type="text"
                 label="Phone"
                 id="phone"
+                value={phone}
                 placeholder="(83) 00000-0000"
+                setphone={setphone}
               />
             </div>
           </div>
 
           <div>
-            <p className="line-title">
-              Birthday *<span id="erroBirthday"></span>
-            </p>
+            <p className="line-title">Birthday *</p>
           </div>
 
           <div className="input-block flex-line">
             <div className="grid-collum four-inputs-by-line">
-              <SelectDay birthday={birthday} setBirthday={setBirthday} />
+              <SelectDay
+                birthday={birthday}
+                setBirthday={setBirthday}
+                day={day}
+                value={day}
+                setday={setday}
+              />
             </div>
             <div className="grid-collum four-inputs-by-line">
-              <SelectMonth birthday={birthday} setBirthday={setBirthday} />
+              <SelectMonth
+                birthday={birthday}
+                setBirthday={setBirthday}
+                month={month}
+                value={month}
+                setmonth={setmonth}
+              />
             </div>
             <div className="grid-collum four-inputs-by-line">
-              <SelectYear birthday={birthday} setBirthday={setBirthday} />
+              <SelectYear
+                birthday={birthday}
+                setBirthday={setBirthday}
+                year={year}
+                value={year}
+                setyear={setyear}
+              />
             </div>
 
             <div className="four-inputs-by-line">
@@ -104,15 +180,18 @@ const FirstTab = ({ tabsMenu }) => {
                 type="number"
                 label="Age"
                 id="age"
-                placeholder={age}
+                value={age}
                 disabled
               />
             </div>
           </div>
 
           <div id="terms" className="input-block">
-            <CheckBox label="I accept the terms and privacy" />
-            <span id="erroCheckbox"></span>
+            <CheckBox
+              label="I accept the terms and privacy"
+              setchecked={setchecked}
+              checked={checked}
+            />
           </div>
 
           <div className="input-block btn-to-right">

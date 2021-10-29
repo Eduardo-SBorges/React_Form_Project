@@ -7,6 +7,33 @@ import Title from '../../Components/Title/Title';
 import './ThirdTab.css';
 
 const ThirdTab = ({ tabsMenu }) => {
+  const [certificates, setcertificates] = React.useState([]);
+  const [teamname, setteamname] = React.useState('');
+  const [institution, setinstitution] = React.useState('');
+  const [graduation, setgraduation] = React.useState('');
+
+  React.useEffect(() => {
+    if (localStorage.getItem('certificates') !== null) {
+      setcertificates(localStorage.getItem('certificates'));
+    }
+    if (localStorage.getItem('teamname') !== null) {
+      setteamname(localStorage.getItem('teamname'));
+    }
+    if (localStorage.getItem('institution') !== null) {
+      setinstitution(localStorage.getItem('institution'));
+    }
+    if (localStorage.getItem('graduation') !== null) {
+      setgraduation(localStorage.getItem('graduation'));
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem('certificates', certificates);
+    localStorage.setItem('teamname', teamname);
+    localStorage.setItem('institution', institution);
+    localStorage.setItem('graduation', graduation);
+  }, [certificates, teamname, institution, graduation]);
+
   return (
     <>
       <section id="third-tab">
@@ -16,7 +43,10 @@ const ThirdTab = ({ tabsMenu }) => {
 
         <div id="content_3tab">
           <div id="entry-certificates" className="input-block div-heart">
-            <CertificatesInput />
+            <CertificatesInput
+              value={certificates}
+              setcertificates={setcertificates}
+            />
           </div>
           <div className="input-block btn-space-between btn-more">
             <div className="certificates-list">
@@ -42,9 +72,10 @@ const ThirdTab = ({ tabsMenu }) => {
               label="Team Name *"
               id="teamName"
               placeholder="My Teams Name"
+              value={teamname}
+              setteamname={setteamname}
               required
             />
-            <span id="erroTeamName"></span>
           </div>
 
           <div className="input-block">
@@ -53,9 +84,10 @@ const ThirdTab = ({ tabsMenu }) => {
               label="Institution *"
               id="institution"
               placeholder="Universidade Federal da Paraíba"
+              value={institution}
+              setinstitution={setinstitution}
               required
             />
-            <span id="erroInstitution"></span>
           </div>
 
           <div className="input-block">
@@ -64,9 +96,10 @@ const ThirdTab = ({ tabsMenu }) => {
               label="Graduation *"
               id="graduation"
               placeholder="Ciência da Computação"
+              value={graduation}
+              setgraduation={setgraduation}
               required
             />
-            <span id="erroGraduation"></span>
           </div>
 
           <div className="input-block btn-to-right">

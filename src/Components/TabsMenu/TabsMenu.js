@@ -1,7 +1,7 @@
 import React from 'react';
 import './TabsMenu.css';
 
-const TabsMenu = ({ active1, active2, active3, settopnavigation }) => {
+const TabsMenu = ({ active1, active2, active3, settopnavigation, setname }) => {
   const handleClickTab1 = () => {
     settopnavigation('tab1');
   };

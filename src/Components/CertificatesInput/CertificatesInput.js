@@ -2,7 +2,7 @@ import React from 'react';
 import './CertificatesInput.css';
 import { Heart } from 'react-feather';
 
-const CertificatesInput = () => {
+const CertificatesInput = ({ value, setcertificates }) => {
   return (
     <>
       <label className="labels" htmlFor="certificates">
@@ -13,6 +13,8 @@ const CertificatesInput = () => {
           type="text"
           id="certificates"
           className="input-heart"
+          value={value}
+          onChange={(e) => setcertificates(e.target.value)}
           placeholder="https://cursos.alura.com.br/certificate/4ad81d87-33a3-48f4-86ac-5d4e3747b761"
         />
         <button id="btn_heart">

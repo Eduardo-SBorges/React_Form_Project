@@ -5,6 +5,23 @@ import Title from '../../Components/Title/Title';
 import './SecondTab.css';
 
 const SecondTab = ({ tabsMenu }) => {
+  const [linkedin, setlinkedin] = React.useState('');
+  const [github, setgithub] = React.useState('');
+
+  React.useEffect(() => {
+    if (localStorage.getItem('linkedin') !== null) {
+      setlinkedin(localStorage.getItem('linkedin'));
+    }
+    if (localStorage.getItem('github') !== null) {
+      setgithub(localStorage.getItem('github'));
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem('linkedin', linkedin);
+    localStorage.setItem('github', github);
+  }, [linkedin, github]);
+
   return (
     <>
       <section id="second-tab">
@@ -18,6 +35,8 @@ const SecondTab = ({ tabsMenu }) => {
               type="text"
               label="LinkedIn"
               id="linkedin"
+              value={linkedin}
+              setlinkedin={setlinkedin}
               placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
             />
           </div>
@@ -27,6 +46,8 @@ const SecondTab = ({ tabsMenu }) => {
               type="text"
               label="Github *"
               id="github"
+              value={github}
+              setgithub={setgithub}
               placeholder="https://github.com/example"
               required
             />

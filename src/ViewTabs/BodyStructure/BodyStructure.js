@@ -6,18 +6,28 @@ import ThirdTab from '../ThirdTab/ThirdTab';
 import './BodyStructure.css';
 
 const BodyStructure = () => {
+  /* Variables for unlocking tabs on inputs completed */
   const [locktab2, setlocktab2] = React.useState(true);
   const [locktab3, setlocktab3] = React.useState(true);
+  /* Ending of variables for unlocking tabs on inputs completed */
+
+  /* Variables for buttons and tabs' navigation */
   const [topnavigation, settopnavigation] = React.useState(null);
   const [tabName, setTabName] = React.useState('First Tab');
   const [showTab1, setShowTab1] = React.useState(true);
   const [showTab2, setShowTab2] = React.useState(false);
   const [showTab3, setShowTab3] = React.useState(false);
+  /* Ending of variables for buttons and tabs' navigation */
+
+  /* Starting codes for rendering of tabs using Tabs' clicks */
   const [tabRender, setTabRender] = React.useState(
     <FirstTab
+      topnavigation={topnavigation}
       tabsMenu={<TabsMenu active1 settopnavigation={settopnavigation} />}
     />,
   );
+
+  /* Starting codes for rendering of tabs using Tabs' clicks */
   const setShowTab1_true = () => {
     setShowTab1(true);
     setShowTab2(false);
@@ -61,7 +71,9 @@ const BodyStructure = () => {
       setShowTab3_true();
     }
   }, [topnavigation, locktab2, locktab3]);
+  /* Ending codes for rendering of tabs using Tabs' clicks */
 
+  /* Starting codes for rendering of tabs using Next Buttons' clicks */
   const handleClick = (e) => {
     e.preventDefault();
 
@@ -98,6 +110,7 @@ const BodyStructure = () => {
       setShowTab3(false);
     }
   };
+  /* Ending codes for rendering of tabs using Next Buttons' clicks */
 
   return (
     <>

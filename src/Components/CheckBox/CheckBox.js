@@ -1,12 +1,24 @@
 import React from 'react';
 import './CheckBox.css';
 
-const CheckBox = ({ label }) => {
+const CheckBox = ({ label, value, checked, setchecked }) => {
   return (
     <label id="terms-label" className="check-terms">
       {label}
-      <span id="erroCheckbox"></span>
-      <input id="terms-input" type="checkbox" required />
+      <input
+        id="terms-input"
+        type="checkbox"
+        value={value}
+        onChange={(e) => {
+          if (checked === '') {
+            setchecked('checked');
+          } else {
+            setchecked('');
+          }
+        }}
+        checked={checked}
+        required
+      />
       <span id="terms-span" className="checkmark"></span>
     </label>
   );

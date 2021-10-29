@@ -1,7 +1,7 @@
 import React from 'react';
 import '../SelectInputs.css';
 
-const SelectMonth = ({ birthday, setBirthday }) => {
+const SelectMonth = ({ birthday, setBirthday, setmonth, value }) => {
   const meses = Array.from({ length: 12 }, (a, b) => ++b);
 
   return (
@@ -13,8 +13,12 @@ const SelectMonth = ({ birthday, setBirthday }) => {
         className="select"
         id="month"
         name="month"
+        value={value}
         required
-        onChange={(e) => setBirthday({ ...birthday, month: e.target.value })}
+        onChange={(e) => {
+          setBirthday({ ...birthday, month: e.target.value });
+          setmonth(e.target.value);
+        }}
       >
         <option value=""></option>
         {meses.map((mes) => {
