@@ -3,7 +3,13 @@ import { XCircle } from 'react-feather';
 
 const ButtonClose = () => {
   return (
-    <button className="btn" onClick={() => window.location.reload()}>
+    <button
+      className="btn"
+      onClick={() => {
+        localStorage.clear();
+        window.location.reload();
+      }}
+    >
       Close
       <XCircle />
     </button>

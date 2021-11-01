@@ -21,6 +21,9 @@ const ThirdTab = ({ tabsMenu }) => {
   const notFavorite = '🤍 ';
 
   const addCertificate = () => {
+    if (certificatesList[0] === '') {
+      certificatesList.pop();
+    }
     if (certificatesList.length <= 4) {
       if (certificates) {
         if (heart) {

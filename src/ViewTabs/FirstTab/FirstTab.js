@@ -9,7 +9,7 @@ import SelectYear from '../../Components/SelectInputs/SelectYear/SelectYear';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import ButtonNext from '../../Components/Buttons/ButtonNext/ButtonNext';
 
-const FirstTab = ({ tabsMenu }) => {
+const FirstTab = ({ tabsMenu, setlocktab2, setlocktab3 }) => {
   /* Starting codes for auto age calculation */
 
   const [age, setage] = React.useState('');
@@ -86,7 +86,35 @@ const FirstTab = ({ tabsMenu }) => {
     localStorage.setItem('year', year);
     localStorage.setItem('age', age);
     localStorage.setItem('checked', checked);
-  }, [name, nickname, email, phone, day, month, year, age, checked]);
+
+    if (
+      !localStorage.getItem('name') ||
+      !localStorage.getItem('email') ||
+      !localStorage.getItem('day') ||
+      !localStorage.getItem('month') ||
+      !localStorage.getItem('year') ||
+      !localStorage.getItem('age') ||
+      !localStorage.getItem('checked')
+    ) {
+      setlocktab2(true);
+    } else {
+      setlocktab2(false);
+    }
+    if (!localStorage.getItem('github')) {
+      setlocktab3(true);
+    }
+  }, [
+    name,
+    nickname,
+    email,
+    phone,
+    day,
+    month,
+    year,
+    age,
+    checked,
+    setlocktab2,
+  ]);
 
   /* Ending of variables for Saving Informations */
   return (
@@ -137,7 +165,7 @@ const FirstTab = ({ tabsMenu }) => {
                 type="text"
                 label="Phone"
                 id="phone"
-                value={mask(phone, ['(99) 9 9999-9999'])}
+                value={mask(phone, ['(99) 9999-99999'])}
                 placeholder="(83) 00000-0000"
                 setphone={setphone}
               />

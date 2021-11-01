@@ -4,7 +4,7 @@ import CommonInput from '../../Components/CommonInput/CommonInput';
 import Title from '../../Components/Title/Title';
 import './SecondTab.css';
 
-const SecondTab = ({ tabsMenu }) => {
+const SecondTab = ({ tabsMenu, setlocktab3 }) => {
   const [linkedin, setlinkedin] = React.useState('');
   const [github, setgithub] = React.useState('');
 
@@ -20,7 +20,12 @@ const SecondTab = ({ tabsMenu }) => {
   React.useEffect(() => {
     localStorage.setItem('linkedin', linkedin);
     localStorage.setItem('github', github);
-  }, [linkedin, github]);
+    if (!localStorage.getItem('github')) {
+      setlocktab3(true);
+    } else {
+      setlocktab3(false);
+    }
+  }, [linkedin, github, setlocktab3]);
 
   return (
     <>

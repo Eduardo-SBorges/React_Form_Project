@@ -1,17 +1,28 @@
 import React from 'react';
 import './TabsMenu.css';
 
-const TabsMenu = ({ active1, active2, active3, settopnavigation }) => {
+const TabsMenu = ({
+  active1,
+  active2,
+  active3,
+  settopnavigation,
+  locktab2,
+  locktab3,
+}) => {
   const handleClickTab1 = () => {
     settopnavigation('tab1');
   };
 
   const handleClickTab2 = () => {
-    settopnavigation('tab2');
+    if (!locktab2) {
+      settopnavigation('tab2');
+    }
   };
-
+  console.log(locktab2);
   const handleClickTab3 = () => {
-    settopnavigation('tab3');
+    if (!locktab3) {
+      settopnavigation('tab3');
+    }
   };
 
   if (active1) {

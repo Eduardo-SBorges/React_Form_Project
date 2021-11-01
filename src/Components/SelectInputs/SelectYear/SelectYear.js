@@ -4,7 +4,7 @@ import '../SelectInputs.css';
 const SelectYear = ({ birthday, setBirthday, setyear, value }) => {
   const anos = Array.from(
     { length: 110 },
-    (a, b) => b + new Date().getFullYear() - 110,
+    (a, b) => b + new Date().getFullYear() - 109,
   );
   return (
     <>
