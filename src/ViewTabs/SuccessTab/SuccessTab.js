@@ -26,18 +26,23 @@ const SuccessTab = () => {
         <p>Linkedin: {localStorage.getItem('linkedin')}</p>
       )}
       <p>Github: {localStorage.getItem('github')}</p>
-      {localStorage.getItem('certificates') && (
+      {localStorage.getItem('certificatesList') && (
         <>
           <p>Certificates:</p>
           <ul>
-            <li>{localStorage.getItem('certificates')}</li>
+            {localStorage
+              .getItem('certificatesList')
+              .split(',')
+              .map((certificate, index) => (
+                <li key={index}>{certificate}</li>
+              ))}
           </ul>
         </>
       )}
       <p>Team Name: {localStorage.getItem('teamname')}</p>
       <p>Institution: {localStorage.getItem('institution')}</p>
       <p>Graduation: {localStorage.getItem('graduation')}</p>
-      <div className="btn-to-right">
+      <div className="btn-to-right btn-close">
         <ButtonClose />
       </div>
     </div>

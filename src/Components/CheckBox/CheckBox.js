@@ -9,7 +9,7 @@ const CheckBox = ({ label, value, checked, setchecked }) => {
         id="terms-input"
         type="checkbox"
         value={value}
-        onChange={(e) => {
+        onChange={() => {
           if (checked === '') {
             setchecked('checked');
           } else {

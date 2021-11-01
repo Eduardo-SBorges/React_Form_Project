@@ -5,9 +5,9 @@
 .btn-to-down {
   display: flex;
   align-items: flex-end;
-  height: 322px;
+  height: 314px;
 }
 
 .btn-to-down button {
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }

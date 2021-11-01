@@ -1,4 +1,6 @@
-/* First TAB */
+#content_1tab {
+  margin-top: -7px !important;
+}
 
 .check-terms,
 .checkmark {

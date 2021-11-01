@@ -30,23 +30,23 @@ const CommonInput = ({
         placeholder={placeholder}
         value={value}
         onChange={(e) => {
-          if (e.nativeEvent.path[0].id === 'fullname') {
+          if (e.target.id === 'fullname') {
             setname(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'nickname') {
+          } else if (e.target.id === 'nickname') {
             setnickname(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'email') {
+          } else if (e.target.id === 'email') {
             setemail(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'phone') {
+          } else if (e.target.id === 'phone') {
             setphone(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'linkedin') {
+          } else if (e.target.id === 'linkedin') {
             setlinkedin(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'github') {
+          } else if (e.target.id === 'github') {
             setgithub(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'teamName') {
+          } else if (e.target.id === 'teamName') {
             setteamname(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'institution') {
+          } else if (e.target.id === 'institution') {
             setinstitution(e.target.value);
-          } else if (e.nativeEvent.path[0].id === 'graduation') {
+          } else if (e.target.id === 'graduation') {
             setgraduation(e.target.value);
           }
         }}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { mask } from 'remask';
 import './FirstTab.css';
 import CommonInput from '../../Components/CommonInput/CommonInput';
 import Title from '../../Components/Title/Title';
@@ -8,15 +9,16 @@ import SelectYear from '../../Components/SelectInputs/SelectYear/SelectYear';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import ButtonNext from '../../Components/Buttons/ButtonNext/ButtonNext';
 
-const FirstTab = ({ tabsMenu, topnavigation }) => {
+const FirstTab = ({ tabsMenu }) => {
   /* Starting codes for auto age calculation */
+
+  const [age, setage] = React.useState('');
   const [birthday, setBirthday] = React.useState({
     day: 0,
     month: 0,
     year: 0,
   });
 
-  const [age, setage] = React.useState('');
   React.useEffect(() => {
     const birth = new Date(birthday.year, birthday.month - 1, birthday.day);
     if (birthday.year === 0) {
@@ -135,7 +137,7 @@ const FirstTab = ({ tabsMenu, topnavigation }) => {
                 type="text"
                 label="Phone"
                 id="phone"
-                value={phone}
+                value={mask(phone, ['(99) 9 9999-9999'])}
                 placeholder="(83) 00000-0000"
                 setphone={setphone}
               />
@@ -194,7 +196,7 @@ const FirstTab = ({ tabsMenu, topnavigation }) => {
             />
           </div>
 
-          <div className="input-block btn-to-right">
+          <div className="input-block  btn-to-right">
             <ButtonNext id="tab1" />
           </div>
         </div>

@@ -32,6 +32,10 @@
   fill: #074ee8;
   color: #074ee8;
 }
+.heartFilled {
+  fill: #074ee8;
+  color: #074ee8;
+}
 
 textarea:focus,
 input:focus:not(.input-heart),
@@ -44,4 +48,8 @@ select:focus {
 .input-heart:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
+}
+
+svg {
+  vertical-align: middle;
 }
