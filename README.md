@@ -1,6 +1,6 @@
 <h1 align="center"> React Form Project </h1>
 <br />
-In this project, all the knowledge acquired during the courses and mentoring received in the Compasso React Scholarship Program were applied. See here the deploy of this project: https://example.com
+In this project, all the knowledge acquired during the courses and mentoring received in the Compasso React Scholarship Program were applied. See here the deploy of this project: https://eduardo-sborges.github.io/React_Form_Project/
 <br /><br />
 
 ### Step by Step of the Project
@@ -34,6 +34,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React](https://pt-br.reactjs.org/)
 - [Javascript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/en/)
-- [Remask.js](https://www.npmjs.com/package/remask)
 - [CSS](https://reactnative.dev/)
 - [HTML](https://www.typescriptlang.org/)
