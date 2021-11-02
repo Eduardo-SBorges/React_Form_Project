@@ -5,6 +5,7 @@ import Title from '../../Components/Title/Title';
 import './SecondTab.css';
 
 const SecondTab = ({ tabsMenu, setlocktab3 }) => {
+  /* Starting variables for faving informations on localStorage */
   const [linkedin, setlinkedin] = React.useState('');
   const [github, setgithub] = React.useState('');
 
@@ -26,7 +27,7 @@ const SecondTab = ({ tabsMenu, setlocktab3 }) => {
       setlocktab3(false);
     }
   }, [linkedin, github, setlocktab3]);
-
+  /* Ending variables for faving informations on localStorage */
   return (
     <>
       <section id="second-tab">

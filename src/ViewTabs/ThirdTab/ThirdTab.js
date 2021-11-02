@@ -75,6 +75,7 @@ const ThirdTab = ({ tabsMenu }) => {
   }, []);
 
   React.useEffect(() => {
+    /* Starting variables for faving informations on localStorage */
     localStorage.setItem('certificates', certificates);
     localStorage.setItem('certificatesList', certificatesList);
     localStorage.setItem('teamname', teamname);
@@ -92,7 +93,7 @@ const ThirdTab = ({ tabsMenu }) => {
       return 'isNotActive';
     }
   };
-
+  /* Ending variables for faving informations on localStorage */
   return (
     <>
       <section id="third-tab">

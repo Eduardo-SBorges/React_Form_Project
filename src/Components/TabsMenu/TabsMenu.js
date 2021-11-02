@@ -9,6 +9,7 @@ const TabsMenu = ({
   locktab2,
   locktab3,
 }) => {
+  /* Starting variables for clicking on the top's menu */
   const handleClickTab1 = () => {
     settopnavigation('tab1');
   };
@@ -18,7 +19,6 @@ const TabsMenu = ({
       settopnavigation('tab2');
     }
   };
-  console.log(locktab2);
   const handleClickTab3 = () => {
     if (!locktab3) {
       settopnavigation('tab3');
@@ -32,7 +32,7 @@ const TabsMenu = ({
   } else if (active3) {
     active3 = 'active';
   }
-
+  /* Ending variables for clicking on the top's menu */
   return (
     <>
       <div className="tabs-container">

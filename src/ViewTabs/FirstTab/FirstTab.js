@@ -36,7 +36,7 @@ const FirstTab = ({ tabsMenu, setlocktab2, setlocktab3 }) => {
   }, [birthday]);
   /* Ending codes for auto age calculation */
 
-  /* Variables for Saving Informations */
+  /* Starting variables for faving informations on localStorage */
   const [name, setname] = React.useState('');
   const [nickname, setnickname] = React.useState('');
   const [email, setemail] = React.useState('');
@@ -115,8 +115,7 @@ const FirstTab = ({ tabsMenu, setlocktab2, setlocktab3 }) => {
     checked,
     setlocktab2,
   ]);
-
-  /* Ending of variables for Saving Informations */
+  /* Ending variables for faving informations on localStorage */
   return (
     <>
       <section id="first-tab">
