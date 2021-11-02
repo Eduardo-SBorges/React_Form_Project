@@ -1,6 +1,6 @@
 <h1 align="center"> React Form Project </h1>
 <br />
-In this project, all the knowledge acquired during the courses and mentoring received in the Compasso React Scholarship Program were applied. See here the deploy of this project: https://eduardo-sborges.github.io/React_Form_Project/
+In this project, all the knowledge acquired during the courses and mentoring received in the Compasso React Scholarship Program were applied. See here the deploy of this project: https://eduardo-sborges.github.io/React_Form_Project/index.html
 <br /><br />
 
 ### Step by Step of the Project
