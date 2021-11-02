@@ -165,7 +165,7 @@ const FirstTab = ({ tabsMenu, setlocktab2, setlocktab3 }) => {
                 type="text"
                 label="Phone"
                 id="phone"
-                value={mask(phone, ['(99) 9999-99999'])}
+                value={mask(phone, ['(99) 99999-9999'])}
                 placeholder="(83) 00000-0000"
                 setphone={setphone}
               />
