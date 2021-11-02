@@ -1,0 +1,28 @@
+.labels,
+.check-terms {
+  font-family: 'Nunito', sans-serif;
+  color: #767676;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.inputs {
+  font-family: 'Nunito', sans-serif;
+  color: #111;
+  background: #ffffff;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  border: 2px solid #aaaaaa;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 11px 12px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+input,
+input:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}

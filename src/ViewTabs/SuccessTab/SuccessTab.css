@@ -1,0 +1,36 @@
+.modal-content {
+  font-family: 'Nunito', sans-serif;
+  color: #767676;
+  background: #ffffff;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding-bottom: 19px;
+}
+
+.modal-content p:first-child {
+  color: #074ee8;
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 6px;
+  box-shadow: inset 0px -3px 0px #074ee8;
+}
+
+.modal-content p:not(:first-child) {
+  margin: 1px 0;
+}
+.modal-content ul {
+  margin: 0;
+  padding-left: 5%;
+}
+.modal-content ul li {
+  max-width: 50ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-close {
+  margin-top: 20px !important;
+}

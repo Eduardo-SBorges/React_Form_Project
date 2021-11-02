@@ -1,0 +1,13 @@
+#content_2tab {
+  margin-top: -7px !important;
+}
+
+.btn-to-down {
+  display: flex;
+  align-items: flex-end;
+  height: 314px;
+}
+
+.btn-to-down button {
+  margin-bottom: 20px;
+}

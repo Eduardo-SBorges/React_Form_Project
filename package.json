@@ -1,14 +1,19 @@
 {
   "name": "ceep",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "feather-icons": "^4.28.0",
+    "feather-icons-react": "^0.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-feather": "^2.0.9",
     "react-scripts": "4.0.3",
+    "remask": "0.1.0-alpha.5",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
